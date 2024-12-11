@@ -8,4 +8,5 @@
 *synctex.gz
 *.fdb_latexmk
 *.DS_Store
+*.env
 tstex_modules

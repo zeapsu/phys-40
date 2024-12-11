@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{mathtools}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\onehalfspacing
+\begin{document}
+
+\newcommand{\ket}[1]{\left| #1 \right>}
+
+\title{Quantum Weirdness: Exploring Quantum Error Correction}
+\author{Andry Paez}
+\date{}
+\maketitle
+
+\section*{Progress}
+
+\subsection*{Channel Creation with IBM Quantum}
+I created an IBM Quantum channel and set up an environment to execute quantum circuits. This included accessing real quantum hardware and simulators.
+
+\subsection*{3-Bit Repetition Code Implementation}
+I started the implementation of the basic 3-bit repetition code that will address bit-flip errors, the steps I need to do are:
+\begin{itemize}
+    \item \textbf{Encoding:} Encode a single logical qubit into three physical qubits using CNOT gates.
+    \item \textbf{Detect Noise:} After using IBM's quantum hardware, identify noise, specifically pauli-X, or, bit-flip errors.
+    \item \textbf{Decoding:} Used majority voting to correct errors and recover the logical state.
+    \item \textbf{Testing:} Test the circuit in both noiseless (simulated) and noisy environments using Qiskit Runtime.
+\end{itemize}
+
+\subsection*{Demonstrating Gates}
+I explored the properties of quantum gates, focusing on:
+\begin{itemize}
+    \item The \textbf{Hadamard gate}, which places a qubit into superposition.
+    \item The \textbf{CNOT gate}, used for entangling qubits and constructing error correction codes.
+\end{itemize}
+
+\subsection*{Noise Models}
+I originally planned to incorporate noise models in Qiskit to simulate real-world imperfections, but opted for real noise through using quantum hardware (thanks to qiskit runtime):
+
+\section*{Challenges Encountered/Will Encounter}
+
+\begin{itemize}
+    \item Understanding the interplay between bit-flip errors and quantum superposition states proved challenging, particularly when applying error correction.
+    \item The introduction of Qiskit Runtime required adjustments to the circuit execution workflow.
+    \item Visualizing noise effects on the Bloch sphere and interpreting results in a meaningful way I foresee taking a significant effort.
+\end{itemize}
+
+\section*{To-Do List}
+
+\begin{itemize}
+    \item Extend the project to include \textbf{Shor’s Code} for correcting both bit-flip and phase-flip errors if there is time.
+    \item Compare the performance of the 3-bit repetition code and Shor’s Code on real quantum hardware.
+    \item Develop visual aids for the report and presentation, including:
+    \begin{itemize}
+        \item Histograms comparing error rates with and without error correction.
+        \item Bloch sphere animations demonstrating error effects and recovery.
+    \end{itemize}
+    \item Finalize the report with detailed results, including metrics such as logical qubit recovery rates and fidelity.
+\end{itemize}
+\end{document}
